@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little Surprise for Jayasree 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;padding:22px;
+ display:flex;align-items:center;justify-content:center;
+ font-family:Georgia,serif;color:#80516a;text-align:center;
+ background:linear-gradient(145deg,#ffe3ef,#fff5f8,#f6e4ff);
+ overflow:hidden
+}
+.heart{
+ position:fixed;bottom:-30px;opacity:.65;
+ animation:float 8s linear infinite;pointer-events:none
+}
+@keyframes float{
+ 0%{transform:translateY(0) rotate(0);opacity:0}
+ 15%{opacity:.7}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}
+}
+.card{
+ width:100%;max-width:390px;padding:30px 23px;
+ background:#ffffffdb;border:1px solid white;
+ border-radius:30px;box-shadow:0 15px 50px #d88bad35;
+ position:relative;z-index:1
+}
+.bow{font-size:38px}
+h1{font-size:29px;color:#d75f91;margin:14px 0}
+p{font-size:16px;line-height:1.8}
+.subtitle{font-size:14px;color:#b77b98}
+button{
+ border:0;border-radius:30px;padding:14px 22px;
+ background:linear-gradient(100deg,#f29cbe,#dc78aa);
+ color:white;font-size:15px;font-weight:bold;
+ box-shadow:0 7px 18px #e58bb755;cursor:pointer
+}
+button:active{transform:scale(.97)}
+#letter{display:none;animation:appear 1s ease}
+@keyframes appear{
+ from{opacity:0;transform:translateY(12px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.flower{font-size:25px;letter-spacing:5px}
+.signature{color:#d75f91;font-style:italic}
+.tiny{font-size:12px;color:#bd8ba3}
+</style>
+</head>
+<body>
+<div class="card">
+ <div class="bow">🎀</div>
+ <div class="subtitle">A tiny little surprise</div>
+ <h1>Hey, Jayasree 💗</h1>
+ <p>I've made a little something just for you...</p>
+ <p>Wanna see what's inside? 🌷</p>
+ <button id="open" onclick="reveal()">Open your surprise ✨</button>
+
+ <div id="letter">
+  <div class="flower">🌸 ♡ 🌸</div>
+  <h1>A little note for you</h1>
+  <p>
+   You know, some people make ordinary moments
+   feel a little more special, just by being themselves.
+  </p>
+  <p>
+   And maybe you don't even realise how easily
+   you can put a smile on someone's face. 🦋
+  </p>
+  <p class="signature">
+   Maybe someone is secretly glad you're in their world… ♡
+  </p>
+  <p>Keep smiling, Jayasree. You deserve so much happiness! 💕</p>
+  <div class="flower">💗 🎀 💗</div>
+  <p class="tiny">Made with a little extra thought, just for you.</p>
+ </div>
+</div>
+<script>
+function reveal(){
+ document.getElementById("open").style.display="none";
+ document.getElementById("letter").style.display="block";
+ for(let i=0;i<20;i++){
+  let h=document.createElement("span");
+  h.className="heart";
+  h.textContent=["♡","💗","💕","🌸"][i%4];
+  h.style.left=Math.random()*100+"%";
+  h.style.animationDelay=Math.random()*3+"s";
+  h.style.animationDuration=(5+Math.random()*5)+"s";
+  h.style.fontSize=(15+Math.random()*18)+"px";
+  document.body.appendChild(h);
+ }
+}
+</script>
+</body>
+</html>
